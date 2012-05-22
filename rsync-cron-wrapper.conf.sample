@@ -1,0 +1,28 @@
+#### rsync cron wrapper: Sample Configuration file
+#### ------------------------------------------------------------
+#### - All options except LOG_NAME are required
+#### - Ensure that you do not put a space between ] and =
+#### - You can create multiple configuration files if you need to
+####   rsync more than one directory
+#### ------------------------------------------------------------
+
+## Job Name
+# Use [[job_name]] to seperate configurations
+[[sync_1]]
+
+## Work Directory
+# Place where a PID file will live
+[PID_DIR]= /var/tmp/
+
+## Log Directory
+# Place where a log file will live
+[LOG_DIR]= /var/tmp/
+
+## If no log name is set the job name will be used with a .out extention
+[LOG_NAME]=
+
+
+## rsync command
+# Add full command in one line
+# If you do not redirect your output the wrapper will show the rsync output
+[RSYNC_CMD]= rsync -rvP /var/tmp/dir1 /var/tmp/dir2/ > /var/tmp/rsync.out 2>&1
