@@ -109,7 +109,7 @@ foreach my $conf_line (@conf_lines) {
 			$breakdown2[1] =~ s/^\s*//;
 			$conf_options{$breakdown2[0]} = $breakdown2[1];
 		} else {
-			&log_this("[Status] Strange syntax in the config file at line $line_count...", "output");
+			&log_this("[STATUS] Strange syntax in the config file at line $line_count...", "output");
 		}
 	}
 	$line_count++;
