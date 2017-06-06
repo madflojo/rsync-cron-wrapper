@@ -144,6 +144,9 @@ if ( $continue == 1 ) {
 	&log_this("[STATUS] Starting rsync process with command $conf_options{'RSYNC_CMD'}", "hidden");
 	my $start = time();
 	my $return_code = system($conf_options{'RSYNC_CMD'});
+	## Clean up pid file when finished
+	unlink($pid_file);
+	## Check return code from RSYNC_CMD
 	if ( $return_code == 0 ) {
 		my $finish	= time();
 		my $total	= $finish - $start;
@@ -151,8 +154,7 @@ if ( $continue == 1 ) {
 	} else {
 		&log_this("[FATAL] rsync process failed.. uh oh. check your rsync log or specify one in the config with the --log-file=FILE option", "death");
 	}	
-## Clean up pid file when finished
-unlink($pid_file);
+
 }
 
 ### Close Log
