@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-###### rsync-cron-wrapper.pl | Benjamin Cane @ American Express Technologies
+###### rsync-cron-wrapper.pl | Benjamin Cane
 ###### Created to provide an easy wrapper for putting rsync in cron
 ###### Usage: rsync-cron-wrapper.pl -c <config_file>
 ###### ------------------------------------------------------------
